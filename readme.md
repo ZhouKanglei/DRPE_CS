@@ -40,6 +40,13 @@ A secure optical digital image encryption scheme with authentication capability 
      rate_crop = 0; 	% Ratio of cropping
      ```
 
+   - Save the results
+
+     ```matlab
+     ans_name = ['ans/omp_sampling_', num2str(p), '_noise_', num2str(g),'_tamper_', num2str(posibility),'.mat'];
+     save(ans_name);
+     ```
+
 4. Visualization
 
    - Load saved data from `ans`
