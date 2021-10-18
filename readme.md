@@ -6,6 +6,56 @@ A secure optical digital image encryption scheme with authentication capability 
 
 ![](https://ars.els-cdn.com/content/image/1-s2.0-S0030399219309648-gr1.jpg)
 
+
+
+# Usage
+
+1. Encryption and decryption processes
+
+   - Configure the config file `init.m`
+     - Set the hyper-parameters
+     - Load keys
+
+   - Run `test.m` to encode and decode the input image
+     - Read the input image `I = imread('images/Lena_512.bmp'); `
+     - Obtain the encrypted image `C`
+     - Attack the the encrypted image to obtain `C_attack`
+     - Decode the image to obtain the recovered image `X`
+     - Authenticate correlation `[CC, PCE] = cross_relation(phase_de, X);`
+
+2. Recover the image for CS
+
+   - OMP
+   - CVX
+     - Set up the CVX toolbox first
+     - See a [quick start](http://cvxr.com/cvx/doc/quickstart.html)
+
+3. Attack
+
+   - Run `main.m` to attack the encrypted image
+
+     ```matlab
+     posibility = 0; % Ratio of tamper
+     g = 0;       	% Ratio of noisy param
+     rate_crop = 0; 	% Ratio of cropping
+     ```
+
+4. Visualization
+
+   - Load saved data from `ans`
+
+     ```matlab
+     load(['ans/omp_sampling_', num2str(p), '_noise_', num2str(g),'_tamper_', num2str(posibility),'.mat']);
+     ```
+
+   - Visualize the correlation plane and others
+
+5. Evaluation
+
+   - NPCR & UACI: `NPCR_UACI.m`
+   - Correlation: `horizon_corr.m`
+   - ...
+
 # Citation
 
 - bibtex
