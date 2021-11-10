@@ -14,7 +14,7 @@ function [ P ] = diffusion( C, D )
         P( i, 1 ) = bitxor( P( i, 1 ), P( i - 1, 1 ) );
     end
     
-    for i = m : -1 : 2
+    for i = n : -1 : 2
         P( 1, i ) = bitxor( P( 1, i ), P( 1, i - 1 ) );
     end
     
