@@ -4,13 +4,12 @@ x1 = [];
 posibility = 0;
 p = 0.875;
 g1 = 0;
-for qq = 1:10
-%     qq
-    g1 = g1 + 0.006;
+for i = 1:7
+    p = i / 8;
     load(['ans/omp_sampling_', num2str(p), '_noise_', num2str(g1),'_tamper_', num2str(posibility),'.mat']);
     mesh(CC);
     y1 = [y1 PCE];
-    x1 = [x1 g1];
+    x1 = [x1 p];
 end
 
 plot(x1, y1, '--ko',...
