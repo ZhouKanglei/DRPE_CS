@@ -3,7 +3,7 @@ m = 256;    % size of input image
 n = 256;    % size of input image
 
 if exist('g', 'var') == 0
-    p = 7/8;    % rate of sampling
+    p = 15/16;    % rate of sampling
 end
 
 m_cipher = m;
@@ -28,7 +28,7 @@ A_rand_path = [key_dir, '/A_rand-', num2str(m), '_', num2str(n), '.mat'];
 if ~exist(A_rand_path,'file') == 1
     A_rand = rand(m, n);           
     save(A_rand_path, 'A_rand');
-    disp(['Generate and save the key to ', mask_1_path]);
+    disp(['Generate and save the key to ', A_rand_path]);
 end
 load(A_rand_path, 'A_rand');  % mask 1 for DRPE
 
@@ -66,7 +66,7 @@ if ~exist(P_path, 'file')
             if P1(i, j) == 0
                 P1(i, j) = m_cipher;
             end
-            P2(i, j) = ceil(key(i, j) / n_cipher);
+            P2(i, j) = ceil(key(i, j) / m_cipher);
         end
     end
     save(P_path, 'key', 'P1', 'P2'); % permutation key

@@ -11,9 +11,9 @@ rate_crop = 0; % Ratio of cropping
 % end
 
 
-for i = 1 : 7
+for i = 1 : 14
     disp('---------------------------------');
-    p = i/8;
+    p = i/16;
     test;
     ans_name = ['ans/omp_sampling_', num2str(p), '_noise_', num2str(g),'_tamper_', num2str(posibility),'.mat'];
     save(ans_name);
