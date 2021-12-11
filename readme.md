@@ -43,16 +43,15 @@ A secure optical digital image encryption scheme with authentication capability 
    - Save the results
 
      ```matlab
-     ans_name = ['ans/omp_sampling_', num2str(p), '_noise_', num2str(g),'_tamper_', num2str(posibility),'.mat'];
-     save(ans_name);
+     ans_name = ['ans/omp-sampling-', num2str(p), '_noise-', num2str(g), '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']
      ```
-
+   
 4. Visualization
 
    - Load saved data from `ans`
 
      ```matlab
-     load(['ans/omp_sampling_', num2str(p), '_noise_', num2str(g),'_tamper_', num2str(posibility),'.mat']);
+     load(['ans/omp-sampling-', num2str(p), '_noise-', num2str(g), '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
      ```
 
    - Visualize the correlation plane and others
@@ -80,5 +79,10 @@ A secure optical digital image encryption scheme with authentication capability 
 ```
 
 - GB/T 7714
-  - Zhou K, Fan J, Fan H, et al. Secure image encryption scheme using double random-phase encoding and compressed sensing[J]. Optics & Laser Technology, 2020, 121: 105769.
+
+ ```latex
+ Zhou K, Fan J, Fan H, et al. Secure image encryption scheme using double random-phase encoding and compressed sensing[J]. Optics & Laser Technology, 2020, 121: 105769.
+ ```
+
+
 

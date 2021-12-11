@@ -1,10 +1,11 @@
-% subplot(1, 2, 1);
+
 y = [];
 x = [];
 posibility = 0;
 for i = 1:7
     p = i/8;
-    load(['ans/tamper_', num2str(posibility), '_sampling_', num2str(p), '.mat']);
+    load(['ans/omp-sampling-', num2str(p), '_noise-', num2str(g),...
+        '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
     y = [y psnr];
     x = [x p];
 end
@@ -21,7 +22,8 @@ y = [];
 x = [];
 for i = 1:7
     p = i/8;
-    load(['ans/omp_sampling_', num2str(p), '_noise_', num2str(g),'_tamper_', num2str(posibility),'.mat']);
+    load(['ans/omp-sampling-', num2str(p), '_noise-', num2str(g),...
+        '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
     [psnr, mse] = psnr_mse(X, H);
     y = [y psnr];
     x = [x p];
@@ -40,7 +42,7 @@ xlabel('Compression ratio of ciphertext image to original image');
 ylabel('PSNR value of the reconstructed image');
 set(gca, 'FontName', 'Times', 'FontSize', 14);
 
-axis([0.05 1.05 18 45]);
+% axis([0.05 1.05 18 45]);
 grid on;
 
 
@@ -49,7 +51,7 @@ sum = 0;
 for i = 1:6
     sum = sum + y(i+1)- y(i);
 end
-sum/7
+sum / 7
 
 
 
@@ -61,7 +63,8 @@ x = [];
 posibility = 0;
 for i = 1:7
     p = i/8;
-    load(['ans/omp_sampling_', num2str(p), '_noise_', num2str(g),'_tamper_', num2str(posibility),'.mat']);
+    load(['ans/omp-sampling-', num2str(p), '_noise-', num2str(g),...
+        '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
     y = [y PCE];
     x = [x p];
 end
@@ -78,5 +81,5 @@ xlabel('Compression ratio of ciphertext image to original image');
 ylabel('PCE value of the authentication result');
 set(gca, 'FontName', 'Times', 'FontSize', 14);
 
-axis([0.05 0.95 0.001 0.007]);
+% axis([0.05 0.95 0.001 0.007]);
 grid on;
