@@ -12,7 +12,7 @@ for i = 1 : 7
     disp('---------------------------------');
     p = i / 8;
     test;
-    ans_name = ['ans/omp-sampling-', num2str(p), '_noise-', num2str(g),...
+    ans_name = ['ans/omp_sampling-', num2str(p), '_noise-', num2str(g),...
         '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat'];
     save(ans_name);
     disp(['Save answer to ', ans_name]);
@@ -21,4 +21,3 @@ end
 %% Visualization
 plot_figs(p, g, posibility, rate_crop);
 plot_pce_psnr;
-

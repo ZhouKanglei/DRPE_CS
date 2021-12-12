@@ -4,7 +4,7 @@ x1 = [];
 
 for i = 1:7
     p = i / 8;
-    load(['ans/omp-sampling-', num2str(p), '_noise-', num2str(g),...
+    load(['ans/omp_sampling-', num2str(p), '_noise-', num2str(g),...
             '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
     y1 = [y1 PCE];
     x1 = [x1 p];

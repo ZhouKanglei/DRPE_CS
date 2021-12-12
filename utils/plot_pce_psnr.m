@@ -4,11 +4,12 @@ x = [];
 posibility = 0;
 for i = 1:7
     p = i/8;
-    load(['ans/omp-sampling-', num2str(p), '_noise-', num2str(g),...
+    load(['ans/omp_sampling-', num2str(p), '_noise-', num2str(g),...
         '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
     y = [y psnr];
     x = [x p];
 end
+figure();
 plot(x, y, '--bo',...
     'LineWidth', 1,'MarkerEdgeColor','w',...
     'MarkerFaceColor', 'b', 'MarkerSize',8);
@@ -22,7 +23,7 @@ y = [];
 x = [];
 for i = 1:7
     p = i/8;
-    load(['ans/omp-sampling-', num2str(p), '_noise-', num2str(g),...
+    load(['ans/omp_sampling-', num2str(p), '_noise-', num2str(g),...
         '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
     [psnr, mse] = psnr_mse(X, H);
     y = [y psnr];
@@ -63,7 +64,7 @@ x = [];
 posibility = 0;
 for i = 1:7
     p = i/8;
-    load(['ans/omp-sampling-', num2str(p), '_noise-', num2str(g),...
+    load(['ans/omp_sampling-', num2str(p), '_noise-', num2str(g),...
         '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
     y = [y PCE];
     x = [x p];

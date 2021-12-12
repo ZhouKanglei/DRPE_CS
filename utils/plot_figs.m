@@ -1,6 +1,6 @@
 function plot_figs(p, g, posibility, rate_crop)
 
-load(['ans/omp-sampling-', num2str(p), '_noise-', num2str(g),...
+load(['ans/omp_sampling-', num2str(p), '_noise-', num2str(g),...
         '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
 %% Cross-relation 
 figure(1);
@@ -63,12 +63,16 @@ imhist(uint8(I)); % Input
 title('Input image');
 set(gca, 'Fontname',  'Times New Roman', 'FontSize', 12);
 figure(12);
-imhist(uint8(C)); % Cipher
+imhist(uint8(C)); % Encrypted
 title('Encrypted image');
 set(gca, 'Fontname',  'Times New Roman', 'FontSize', 12);
 figure(13);
 imhist(uint8(X)); % Reconstructed image
 title('Reconstructed image');
 set(gca, 'Fontname',  'Times New Roman', 'FontSize', 12);
+%% correlation
+corr_plot(uint8(I), 'Input image');
+corr_plot(uint8(C), 'Cipher image');
+
 
 end

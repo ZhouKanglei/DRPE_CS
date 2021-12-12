@@ -43,7 +43,7 @@ A secure optical digital image encryption scheme with authentication capability 
    - Save the results
 
      ```matlab
-     ans_name = ['ans/omp-sampling-', num2str(p), '_noise-', num2str(g), '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']
+     ans_name = ['ans/omp_sampling-', num2str(p), '_noise-', num2str(g), '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']
      ```
    
 4. Visualization
@@ -51,7 +51,7 @@ A secure optical digital image encryption scheme with authentication capability 
    - Load saved data from `ans`
 
      ```matlab
-     load(['ans/omp-sampling-', num2str(p), '_noise-', num2str(g), '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
+     load(['ans/omp_sampling-', num2str(p), '_noise-', num2str(g), '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
      ```
 
    - Visualize the correlation plane and others
