@@ -12,11 +12,11 @@ A secure optical digital image encryption scheme with authentication capability 
 
 1. Encryption and decryption processes
 
-   - Configure the config file `init.m`
+   - Configure the config file `lib/init.m`
      - Set the hyper-parameters
      - Load keys
 
-   - Run `test.m` to encode and decode the input image
+   - Run `lib/exp_main.m` to encode and decode the input image
      - Read the input image `I = imread('images/Lena_512.bmp'); `
      - Obtain the encrypted image `C`
      - Attack the the encrypted image to obtain `C_attack`
