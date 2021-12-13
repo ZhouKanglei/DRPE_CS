@@ -33,10 +33,7 @@ end
 fprintf('----------------------------------\n');
 [omp_sampling_rate, ind] = sort(omp_sampling_rate);
 omp_psnr_val = omp_psnr_val(ind);
-omp_pce_val = omp_pce_val(ind);
-[cvx_sampling_rate, ind] = sort(cvx_sampling_rate);
-cvx_psnr_val = cvx_psnr_val(ind);
-cvx_pce_val = cvx_pce_val(ind);
+omp_pce_val = [];
 
 %% Plot the psnr curve w.r.t. the sampling ratio
 figure();
@@ -76,5 +73,5 @@ xlabel('Compression ratio of ciphertext image to original image');
 ylabel('PCE value of the authentication result');
 set(gca, 'FontName', 'Times', 'FontSize', 14);
 
-axis([0.05 0.95 0.0005 0.008]);
+axis([0.05 0.95 0.001 0.007]);
 grid on;
