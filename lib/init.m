@@ -13,6 +13,10 @@ d = m;		                    % length of signal
 N = round(d * p);               % the quantity of measured values
 repeats = n;                    % recover times for CS
 
+if exist('method', 'var') == 0
+    method = 'omp';             % CS recover method (omp | cvx), if cvx, please set the toolbox in advance.
+end
+
 %% Load keys
 key_dir = './keys';
 if ~exist(key_dir, 'dir') == 1

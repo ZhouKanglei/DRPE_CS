@@ -46,8 +46,11 @@ phase_de = DRPE_inverse(phase_recover, A_rand, B_rand);
 Y_H_recover = reverse_sigmoid(Y_recover, Y_max, Y_min); %  [0, 255] -> s
 Y_H_recover = Y_H_recover';
 %% Recover CS of host image
-X = CS_recover(Y_H_recover, d, repeats, T);
-% X = cvx_recover(Y_H_recover, d, repeats, T); % please startup first
+if method == 'cvx'
+    X = cvx_recover(Y_H_recover, d, repeats, T); % please startup first
+else
+    X = CS_recover(Y_H_recover, d, repeats, T);
+end
 %% Inverse DWT
 X = X';
 X = col2im(X, [16,16], [256,256], 'distinct');

@@ -1,6 +1,6 @@
-function plot_figs(p, g, posibility, rate_crop)
+function plot_figs(method, p, g, posibility, rate_crop)
 
-load(['ans/omp_sampling-', num2str(p), '_noise-', num2str(g),...
+load(['ans/', method, '_sampling-', num2str(p), '_noise-', num2str(g),...
         '_tamper-', num2str(posibility), '_crop-', num2str(rate_crop), '.mat']);
 %% Cross-relation 
 figure(1);
