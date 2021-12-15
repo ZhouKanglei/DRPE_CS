@@ -1,6 +1,6 @@
 clc; close all; clear;
 addpath(genpath('utils/'));
-addpath(genpath('lib/'));
+addpath(genpath('src/'));
 
 %% Loop
 posibility = 0;% Ratio of tamper

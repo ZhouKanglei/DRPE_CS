@@ -86,7 +86,7 @@ if ~exist(Phi_path,'file') == 1
 end
 load(Phi_path, 'Phi');  % Gaussian random matrix
 A = dctmtx(d);	        % DCT matrix
-T = Phi * inv(A);       % sense matrix
+T = Phi * inv(A);       % Sense matrix
 W = DWT(d);             % DWT matrix
 
 %% Attack params

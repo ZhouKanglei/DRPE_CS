@@ -16,7 +16,7 @@ X_dwt = full(W * sparse(X_init) * W');
 X_dwt = im2col(X_dwt,[16, 16], 'distinct');
 X_dwt = X_dwt';
 %% CS
-Y_H = T * X_dwt;
+Y_H = Phi * X_dwt;
 %% Quantization
 [Y, Y_max, Y_min] = sigmoid( Y_H' );                     % s -> [0, 255]
 Y = round(Y);
@@ -47,9 +47,9 @@ Y_H_recover = reverse_sigmoid(Y_recover, Y_max, Y_min); %  [0, 255] -> s
 Y_H_recover = Y_H_recover';
 %% Recover CS of host image
 if method == 'cvx'
-    X = cvx_recover(Y_H_recover, d, repeats, T); % please startup first
+    X = cvx_recover(Y_H_recover, d, repeats, Phi); % please startup first
 else
-    X = CS_recover(Y_H_recover, d, repeats, T);
+    X = CS_recover(Y_H_recover, d, repeats, Phi);
 end
 %% Inverse DWT
 X = X';
