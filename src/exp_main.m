@@ -13,7 +13,7 @@ H = imresize(H, [m, n]);
 X_init = double(H);
 %% DWT
 X_dwt = full(W * sparse(X_init) * W');
-X_dwt = im2col(X_dwt,[16, 16], 'distinct');
+X_dwt = im2col(X_dwt, [16, 16], 'distinct'); % Rearrange image blocks into columns
 X_dwt = X_dwt';
 %% CS
 Y_H = Phi * X_dwt;
