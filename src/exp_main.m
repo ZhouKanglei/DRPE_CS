@@ -2,7 +2,7 @@
 %% Initial parameters
 init;
 %% DRPE for input image
-I = imread('images/Lena_512.bmp'); 
+I = imread('../images/Lena_512.bmp'); 
 I = imresize(I, [m, n]);                   % input image
 % I(1,256) = bitxor( I(63,195), 1 );
 [Amp, phase_orignal] = DRPE(I, A_rand, B_rand);    % D: Decrypted image, C: Cipher image, phase: phase image
